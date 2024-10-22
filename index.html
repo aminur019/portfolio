@@ -112,9 +112,9 @@
 		.mynavmenu li:hover a{ color:#f5bd02;}
 	   	.mynavmenu li a.act{ color:#f5bd02;}
         
-		.progress.dis-none {
+		<!-- .progress.dis-none {
 			display: none;
-		}
+		} -->
 		 .anileft {
             opacity: 0;
             transform: translateX(-100%);
@@ -125,10 +125,19 @@
             transform: translateX(100%);
             transition: all 1s ease-out;
         }
+		.anitop {
+            opacity: 0;
+            transform: translateY(-50%);
+            transition: all 1s ease-out;
+        }
 
         div.visible {
             opacity: 1;
             transform: translateX(0);
+        }
+		 div.visible2 {
+            opacity: 1;
+            transform: translateY(0);
         }
 		
 		/* Media Query for Small Devices */
@@ -224,7 +233,7 @@
               </div>
             </div>
 
-            <div class="skills-content skills-animation ">
+            <div class="skills-content skills-animation anileft">
 
               <h5>Skills</h5>
 
@@ -259,7 +268,7 @@
             </div>
           </div>
 
-          <div class="col-md-6">
+          <div class="col-md-6 aniright">
             <div class="about-me ">
               <h4>About me</h4>
               <p>
@@ -293,7 +302,7 @@
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <h3 class="resume-title">Sumary</h3>
 
-            <div class="resume-item pb-0">
+            <div class="resume-item pb-0 aniright">
               <h4>Md Aminur Islam Khan</h4>
               <p><em>I am a dedicated web designer and developer with a strong focus on creating user-friendly and visually appealing websites. Proficient in HTML, CSS, and JavaScript, I enjoy transforming concepts into functional designs. My goal is to deliver seamless digital experiences that meet client needs while enhancing user engagement and satisfaction.</em></p>
               <ul>
@@ -304,14 +313,14 @@
             </div><!-- Edn Resume Item -->
 
             <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
+            <div class="resume-item aniright">
               <h4>Master of Finance & Banking</h4>
               <h5>2009-2010</h5>
               <p><em>Tejgaon College, Dhaka</em></p>
               <p>Finance and banking involve managing money, investments, and financial institutions. Master's programs provide advanced knowledge and skills for careers in financial analysis, investment management, and banking operations.</p>
             </div><!-- Edn Resume Item -->
 
-            <div class="resume-item">
+            <div class="resume-item aniright">
               <h4>Bachelor of Finance & Banking</h4>
               <h5>2005 - 2009</h5>
               <p><em>Azam Khan Government Commerce College</em></p>
@@ -322,7 +331,7 @@
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
+            <div class="resume-item anileft">
               <h4>Senior Web Designer & Developer </h4>
               <h5>2023 - Present</h5>
               <p><em>Freedom IT Institution </em></p>
@@ -333,7 +342,7 @@
               </ul>
             </div><!-- Edn Resume Item -->
 
-            <div class="resume-item">
+            <div class="resume-item anileft">
               <h4>Senior IT Officer & Data Analist</h4>
               <h5>2018 - 2023</h5>
               <p><em>Akij Group, Khulna Regional Office</em></p>
@@ -341,7 +350,7 @@
               </ul>
             </div><!-- Edn Resume Item -->
 			
-			            <div class="resume-item">
+			  <div class="resume-item anileft">
               <h4>Audit Officer </h4>
               <h5>2016 - 2018</h5>
               <p><em>ROSC Project, LGEB, Bangladesh</em></p>
@@ -370,7 +379,7 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4 col-md-6 anileft" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item  position-relative">
               <div class="icon">
                 <i class="bi bi-activity"></i>
@@ -382,7 +391,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4 col-md-6 anitop" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item position-relative">
               <div class="icon">
                 <i class="bi bi-broadcast"></i>
@@ -394,7 +403,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-4 col-md-6 aniright" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item position-relative">
               <div class="icon">
                 <i class="bi bi-easel"></i>
@@ -406,7 +415,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-lg-4 col-md-6 anileft" data-aos="fade-up" data-aos-delay="400">
             <div class="service-item position-relative">
               <div class="icon">
                 <i class="bi bi-bounding-box-circles"></i>
@@ -419,7 +428,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-4 col-md-6 anitop" data-aos="fade-up" data-aos-delay="500">
             <div class="service-item position-relative">
               <div class="icon">
                 <i class="bi bi-calendar4-week"></i>
@@ -432,7 +441,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+          <div class="col-lg-4 col-md-6 aniright" data-aos="fade-up" data-aos-delay="600">
             <div class="service-item position-relative">
               <div class="icon">
                 <i class="bi bi-chat-square-text"></i>
@@ -1002,35 +1011,41 @@
     document.getElementById('toggle-menu').addEventListener('click', function() {
         const mynavmenu = document.getElementById('mynavmenu');
         mynavmenu.classList.toggle('open');
-		
-		
-		
-        window.addEventListener('scroll', function() {
-            const boxes = document.querySelectorAll('.anileft, .aniright');
+	
+    });
+	
+	        window.addEventListener('scroll', function() {
+            const boxes = document.querySelectorAll('.anileft,.aniright, .anitop');
             
             const triggerBottom = window.innerHeight / 5 * 4;
 
-            boxes.forEach(box => {
-                const boxTop = box.getBoundingClientRect().top;
+            boxes.forEach(div => {
+                const boxTop = div.getBoundingClientRect().top;
 
                 if(boxTop < triggerBottom) {
-                    box.classList.add('visible');
+                    div.classList.add('visible');
+					div.classList.add('visible2');
                 } else {
-                    box.classList.remove('visible');
+                    div.classList.remove('visible');
+					div.classList.remove('visible2');
                 }
             });
         });
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-    });
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </script>
 
   <!-- Vendor JS Files -->
