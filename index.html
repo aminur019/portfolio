@@ -139,6 +139,67 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+	.text-carousel-container {
+            width: 80%;
+            overflow: hidden;
+
+            border-radius: 10px;
+            background-color: #fff;
+            position: relative;
+        }
+
+        .text-carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .text-carousel-item {
+            flex: 0 0 25%;  /* Show 4 items at once */
+            text-align: center;
+            padding: 20px;
+            font-size: 20px;
+            color: #333;
+            background-color: #f0f0f0;
+            border-right: 1px solid #ddd;
+        }
+
+        .text-carousel-item:nth-child(even) {
+            background-color: #e0e0e0;
+        }
+
+        /* Navigation buttons outside the ul */
+        .text-prev, .text-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1; /* Make sure the buttons are on top of the carousel */
+        }
+
+        .text-prev {
+            left: 10px;
+        }
+
+        .text-next {
+            right: 10px;
+        }
+
+        .text-prev:hover, .text-next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
 		
 		/* Media Query for Small Devices */
         @media (max-width: 768px) {
@@ -516,14 +577,78 @@
 
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">Construction</li>
-            <li data-filter=".filter-product">Hotel</li>
-            <li data-filter=".filter-branding">Minimalist design</li>
-            <li data-filter=".filter-books">Jewellery</li>
-          </ul><!-- End Portfolio Filters -->
 
+		<div>
+		       <button class="text-prev"><i class="fas fa-chevron-left"></i></button>
+		        <button class="text-next"><i class="fas fa-chevron-right"></i></button>
+		  </div>
+		    <div class="text-carousel-container">
+		        <!-- Navigation Buttons with Font Awesome Icons
+		
+		        <ul class="text-carousel">
+		            <li class="text-carousel-item">John</li>
+		            <li class="text-carousel-item">Jane</li>
+		            <li class="text-carousel-item">Paul</li>
+		            <li class="text-carousel-item">Anna</li>
+		            <li class="text-carousel-item">Mike</li>
+		            <li class="text-carousel-item">Emma</li>
+		            <li class="text-carousel-item">David</li>
+		            <li class="text-carousel-item">Sophia</li>
+		        </ul>
+		    </div> -->
+		     
+			<script>
+let currentIndex = 0;
+        const items = document.querySelectorAll('.text-carousel-item');
+        const totalItems = items.length;
+        const itemsToShow = 4; // Number of items to show at a time
+
+        const carousel = document.querySelector('.text-carousel');
+        const prevButton = document.querySelector('.text-prev');
+        const nextButton = document.querySelector('.text-next');
+
+        function updateCarouselPosition() {
+            carousel.style.transform = `translateX(-${currentIndex * (100 / itemsToShow)}%)`;
+        }
+
+        // Move to the previous set of items
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = totalItems - itemsToShow;
+            }
+            updateCarouselPosition();
+        });
+
+        // Move to the next set of items
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < totalItems - itemsToShow) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateCarouselPosition();
+        });
+				
+			</script>
+
+
+
+
+
+
+
+
+		
+	          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100 text-carousel">
+	            <li class="text-carousel-item" data-filter="*" class="filter-active">All</li>
+	            <li class="text-carousel-item" data-filter=".filter-app">Construction</li>
+	            <li class="text-carousel-item" data-filter=".filter-product">Hotel</li>
+	            <li class="text-carousel-item" data-filter=".filter-branding">Minimalist design</li>
+	            <li class="text-carousel-item" data-filter=".filter-books">Jewellery</li>
+	          </ul><!-- End Portfolio Filters -->
+	</div>
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
