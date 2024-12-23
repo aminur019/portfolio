@@ -1,1104 +1,1284 @@
-<!DOCTYPE html><html lang="en"><head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Aminur Islam Portfolio</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Aminur Islam Portfolio</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="noindex, nofollow">
+    <!-- Favicons -->
+    <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="css/main.css" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
 
-  <meta name="robots" content="noindex, nofollow">
+      .header {
+        background: #333;
+        color: #fff;
+        padding: 0px 20px;
+      }
 
-  <!-- Favicons -->
+      span.logo {
+        display: none;
+        position: absolute;
+        left: 60px;
+        margin: 28px 10px;
+        padding: 5px 30px;
+        font-size: 18px;
+        z-index: 999999;
+        color: #f5bd02;
+        border: 2px solid#f5bd02;
+      }
 
-  <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+      .logoimg {
+        width: 150px;
+      }
 
-  <!-- Vendor CSS Files -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap-icons.css" rel="stylesheet">
+      .act {
+        color: #f5bd02;
+      }
 
+      .mynavmenu {
+        background: #444;
+        color: #fff;
+        position: fixed;
+        /* Fixed position */
+        top: 0px;
+        /* Below the header */
+        left: 0;
+        /* Start from the left */
+        width: 100%;
+        /* Full width */
+        z-index: 99999;
+        opacity: 0;
+        /* Initially hidden */
+        transform: translateX(-100%);
+        /* Start off-screen to the left */
+        transition: opacity 0.7s ease, transform 0.7s ease;
+        /* Smooth transitions */
+        pointer-events: none;
+        /* Prevent interaction when hidden */
+        border-bottom: 5px solid #f5bd02;
+      }
 
-  <link href="css/swiper-bundle.min.css" rel="stylesheet">
+      .mynavmenu.open {
+        opacity: 1;
+        /* Fully visible */
+        transform: translateX(0);
+        /* Move to original position */
+        pointer-events: auto;
+        /* Allow interaction when visible */
+      }
 
-  <!-- Main CSS File -->
-  <link href="css/main.css" rel="stylesheet">
-<style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
+      .mynavmenu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        /* Flexbox for larger screens */
+        flex-wrap: wrap;
+        /* Wrap items to the next line */
+      }
+
+      .mynavmenu li {
+        padding: 10px 20px;
+        flex: 1;
+        /* Flex-grow to fill space evenly */
+        text-align: center;
+        /* Center align text */
+      }
+
+      .mynavmenu a {
+        color: #fff;
+        text-decoration: none;
+        display: flex;
+        /* Flexbox for icon and text */
+        flex-direction: column;
+        /* Stack items vertically */
+        align-items: center;
+        /* Center align items */
+        justify-content: center;
+        /* Center align items */
+      }
+
+      .mynavmenu i {
+        margin-bottom: 5px;
+        /* Space between icon and text */
+        font-size: 24px;
+        /* Icon size */
+      }
+
+      .mobile-mynav-toggle {
+        background: #ffffff80;
+        border: 2px solid #f5bd02;
+        color: #000000;
+        font-size: 24px;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 999999;
+        padding: 10px;
+      }
+
+      .mynavmenu li:hover a {
+        color: #f5bd02;
+      }
+
+      .mynavmenu li a.act {
+        color: #f5bd02;
+      }
+
+      < !-- .progress.dis-none {
+        display: none;
+      }
+
+      -->.anileft {
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: all 1s ease-out;
+      }
+
+      .aniright {
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 1s ease-out;
+      }
+
+      .anitop {
+        opacity: 0;
+        transform: translateY(-50%);
+        transition: all 1s ease-out;
+      }
+
+      div.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      div.visible2 {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      #productList {
+        display: flex;
+        align-items: center;
+      }
+
+      #productList button {
+        padding: 8px 15px;
+        cursor: pointer;
+        border: 1px solid #dbd6d6;
+        border-radius: 50%;
+      }
+
+      button#nextBtn:hover,
+      button#prevBtn:hover {
+        background: #aba6a694;
+        color: #fff;
+        border-color: #1c1c1c80;
+      }
+
+      .portfolio .portfolio-filters li {
+        cursor: pointer;
+        display: inline-block;
+        padding: 0;
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0 10px;
+        line-height: 1;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        transition: all 0.3s ease-in-out;
+        width: 39%;
+      }
+
+      .portfolio .portfolio-filters {
+        padding: 0;
+        margin: 0 auto 20px auto;
+        list-style: none;
+        text-align: center;
+        border: 1px solid #f0f0f0;
+        padding: 10px 20px;
+        border-radius: 30px;
+      }
+
+      /* Media Query for Small Devices */
+      @media (max-width: 768px) {
+        span.logo {
+          left: 30%;
         }
 
-        .header {
-            background: #333;
-            color: #fff;
-            padding: 0px 20px;
-        }
-		span.logo {
-			display:none;
-			position: absolute;
-			left: 60px;
-			margin: 28px 10px;
-			padding: 5px 30px;
-			font-size: 18px;
-			z-index: 999999;
-			color: #f5bd02;
-			border: 2px solid#f5bd02;
-		}
-		.logoimg{width:150px;}
-		.act{ color:#f5bd02;}
-        .mynavmenu {
-            background: #444;
-            color: #fff;
-            position: fixed; /* Fixed position */
-            top: 0px; /* Below the header */
-            left: 0; /* Start from the left */
-            width: 100%; /* Full width */
-            z-index: 99999;
-            opacity: 0; /* Initially hidden */
-            transform: translateX(-100%); /* Start off-screen to the left */
-            transition: opacity 0.7s ease, transform 0.7s ease; /* Smooth transitions */
-            pointer-events: none; /* Prevent interaction when hidden */
-			border-bottom:5px solid #f5bd02;
-        }
-
-        .mynavmenu.open {
-            opacity: 1; /* Fully visible */
-            transform: translateX(0); /* Move to original position */
-            pointer-events: auto; /* Allow interaction when visible */
+        .empty {
+          display: none;
         }
 
         .mynavmenu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex; /* Flexbox for larger screens */
-            flex-wrap: wrap; /* Wrap items to the next line */
+          display: flex;
+          /* Display items in a row on small screens */
+          flex-direction: row;
+          /* Set items in a row */
+          justify-content: center;
+          /* Center items */
         }
 
         .mynavmenu li {
-            padding: 10px 20px;
-            flex: 1; /* Flex-grow to fill space evenly */
-            text-align: center; /* Center align text */
+          text-align: center;
+          /* Center align text */
+          flex: none;
+          /* Do not flex-grow to fill space */
+          padding: 10px;
+          /* Adjust padding */
+          width: 100vw;
+        }
+
+        .mynavmenu li:hover {
+          background: #fff;
+        }
+
+        .mynavmenu li:hover a {
+          color: #f5bd02;
         }
 
         .mynavmenu a {
-            color: #fff;
-            text-decoration: none;
-            display: flex; /* Flexbox for icon and text */
-            flex-direction: column; /* Stack items vertically */
-            align-items: center; /* Center align items */
-            justify-content: center; /* Center align items */
+          flex-direction: row;
+          /* Set icon and text in a row */
         }
 
         .mynavmenu i {
-            margin-bottom: 5px; /* Space between icon and text */
-            font-size: 24px; /* Icon size */
+          margin-bottom: 0;
+          margin-right: 5px;
+          padding-right: 5px;
+          font-size: 18px;
         }
-
-        .mobile-mynav-toggle {
-            background: #ffffff80;
-            border: 2px solid #f5bd02;
-            color: #000000;
-            font-size: 24px;
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            z-index: 999999;
-            padding: 10px;
-        }
-		.mynavmenu li:hover a{ color:#f5bd02;}
-	   	.mynavmenu li a.act{ color:#f5bd02;}
-        
-		<!-- .progress.dis-none {
-			display: none;
-		} -->
-		 .anileft {
-            opacity: 0;
-            transform: translateX(-100%);
-            transition: all 1s ease-out;
-        }
-		 .aniright {
-            opacity: 0;
-            transform: translateX(100%);
-            transition: all 1s ease-out;
-        }
-		.anitop {
-            opacity: 0;
-            transform: translateY(-50%);
-            transition: all 1s ease-out;
-        }
-
-        div.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-		 div.visible2 {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-	
-		
-		/* Media Query for Small Devices */
-        @media (max-width: 768px) {
-				span.logo {
-
-			left: 30%;
-	
-		}
-			.empty{display:none;}
-			
-            .mynavmenu ul {
-                display: flex; /* Display items in a row on small screens */
-                flex-direction: row; /* Set items in a row */
-                justify-content: center; /* Center items */
-            }
-
-            .mynavmenu li {
-                text-align: center; /* Center align text */
-                flex: none; /* Do not flex-grow to fill space */
-                padding: 10px; /* Adjust padding */
-				width:100vw;
-            }
-			.mynavmenu li:hover{background:#fff;}
-			.mynavmenu li:hover a{ color:#f5bd02;}
-            .mynavmenu a {
-                flex-direction: row; /* Set icon and text in a row */
-            }
-
-            .mynavmenu i {
-			margin-bottom: 0;
-			margin-right: 5px;
-			padding-right: 5px;
-			font-size: 18px;
-		}
-        }
-
+      }
     </style>
-</head>
-
-<body class="index-page">
-
-  <button id="toggle-menu" class="mobile-mynav-toggle">
-    <i class="fa-solid fa-bars-staggered"></i>
-</button>
-
-<nav id="mynavmenu" class="mynavmenu closed">
-    <ul>
-		<li><a href="#"></li>
-		<li><a href="#"></li>
-		<li><a href="#"></li>
-        <li><a href="#hero" class="act"><i class="fas fa-home act"></i> Home</a></li>
-        <li><a href="#about"><i class="fa-solid fa-user-tie"></i>About</a></li>
-        <li><a href="#services"><i class="fas fa-cogs"></i> Services</a></li>
-        <li><a href="#portfolio"><i class="fa-solid fa-briefcase"></i>Portfolio</a></li>
-		<li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-    </ul>
-</nav>
-  
-  
-<span class="mobile-nav-toggle d-xl-none bi bi-list"></span>
-  <main class="main">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-
-      <!--<img src="images/hero-img.jpg" alt="" data-aos="fade-in">-->
-
-      <div class="container d-flex flex-column align-items-center justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
-        <h2>I am Aminur Islam</h2>
-        <p><span class="typed" data-typed-items="Web Designer,Web Developer, Freelancer, WordPress Expert"></span></p>
-      </div>
-
-    </section><!-- /Hero Section -->
-
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-          <div class="col-md-6">
-
-            <div class="row justify-content-between gy-4">
-              <div class="col-lg-5">
-                <img src="images/Aminur.png" class="img-fluid" alt="">
-              </div>
-              <div class="col-lg-7 about-info">
-                <p><strong>Name: </strong> <span>Md. Aminur Islam Khan</span></p>
-                <p><strong>Profile: </strong> <span>Front-End  Developer</span></p>
-                <p><strong>Email: </strong> <span>aminurislam.dev@gmail.com</span></p>
-                <p><strong>Phone: </strong> <span>+880 1676-636300</span></p>
-              </div>
-            </div>
-
-            <div class="skills-content skills-animation anileft">
-
-              <h5>Skills</h5>
-
-              <div class="progress">
-                <span class="skill"><span>HTML</span> <i class="val">100%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div><!-- End Skills Item -->
-
-              <div class="progress">
-                <span class="skill"><span>CSS</span> <i class="val">90%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div><!-- End Skills Item -->
-
-              <div class="progress">
-                <span class="skill"><span>JavaScript</span> <i class="val">75%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div><!-- End Skills Item -->
-
-              <div class="progress">
-                <span class="skill"><span>Photoshop</span> <i class="val">55%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div><!-- End Skills Item -->
-
-            </div>
-          </div>
-
-          <div class="col-md-6 aniright">
-            <div class="about-me ">
-              <h4>About me</h4>
-              <p>
-					I’m Aminur Islam, a front-end and back-end developer with a passion for creating seamless digital experiences. I specialize in responsive design using HTML, CSS, and JavaScript, while ensuring efficient server-side functionality with PHP, and MySQL. <br><br>
-
-					With a full-stack approach, I transform ideas into visually engaging, high-performing websites. I prioritize user experience and technical precision, delivering solutions that are both functional and scalable.<br><br>
-
-					Collaboration is central to my process. I work closely with clients and teams to align technical development with project goals, ensuring each product meets both business and user needs effectively.
-              </p>
-            </div>
-          </div>
+  </head>
+  <body class="index-page">
+    <button id="toggle-menu" class="mobile-mynav-toggle">
+      <i class="fa-solid fa-bars-staggered"></i>
+    </button>
+    <nav id="mynavmenu" class="mynavmenu closed">
+      <ul>
+        <li>
+          <a href="#">
+        </li>
+        <li>
+          <a href="#">
+        </li>
+        <li>
+          <a href="#">
+        </li>
+        <li>
+          <a href="#hero" class="act">
+            <i class="fas fa-home act"></i> Home </a>
+        </li>
+        <li>
+          <a href="#about">
+            <i class="fa-solid fa-user-tie"></i>About </a>
+        </li>
+        <li>
+          <a href="#services">
+            <i class="fas fa-cogs"></i> Services </a>
+        </li>
+        <li>
+          <a href="#portfolio">
+            <i class="fa-solid fa-briefcase"></i>Portfolio </a>
+        </li>
+        <li>
+          <a href="#contact">
+            <i class="fas fa-envelope"></i> Contact </a>
+        </li>
+      </ul>
+    </nav>
+    <span class="mobile-nav-toggle d-xl-none bi bi-list"></span>
+    <main class="main">
+      <!-- Hero Section -->
+      <section id="hero" class="hero section dark-background">
+        <!--<img src="images/hero-img.jpg" alt="" data-aos="fade-in">-->
+        <div class="container d-flex flex-column align-items-center justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+          <h2>I am Aminur Islam</h2>
+          <p>
+            <span class="typed" data-typed-items="Web Designer,Web Developer, Freelancer, WordPress Expert"></span>
+          </p>
         </div>
-
-      </div>
-
-    </section><!-- /About Section -->
-
-    <!-- Resume Section -->
-    <section id="resume" class="resume section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
-        <p>A resume is a document highlighting a person's skills, experience, and qualifications, used to apply for jobs or opportunities.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Sumary</h3>
-
-            <div class="resume-item pb-0 aniright">
-              <h4>Md Aminur Islam Khan</h4>
-              <p><em>I am a dedicated web designer and developer with a strong focus on creating user-friendly and visually appealing websites. Proficient in HTML, CSS, and JavaScript, I enjoy transforming concepts into functional designs. My goal is to deliver seamless digital experiences that meet client needs while enhancing user engagement and satisfaction.</em></p>
-              <ul>
-                <li>29 no sahinur jame mosjid road, goborchaka, shonadanga, khulna-9100</li>
-                <li>+880 1676-636300</li>
-                <li>aminurislam.dev@gmail.com</li>
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item aniright">
-              <h4>Master of Finance & Banking</h4>
-              <h5>2009-2010</h5>
-              <p><em>Tejgaon College, Dhaka</em></p>
-              <p>Finance and banking involve managing money, investments, and financial institutions. Master's programs provide advanced knowledge and skills for careers in financial analysis, investment management, and banking operations.</p>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item aniright">
-              <h4>Bachelor of Finance & Banking</h4>
-              <h5>2005 - 2009</h5>
-              <p><em>Azam Khan Government Commerce College</em></p>
-              <p>Finance and Banking Honors programs offer in-depth knowledge of financial markets, investment strategies, and banking operations, preparing students for advanced careers in finance and economic analysis.</p>
-            </div><!-- Edn Resume Item -->
-
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item anileft">
-              <h4>Senior Web Designer & Developer </h4>
-              <h5>2023 - Present</h5>
-              <p><em>Freedom IT Institution </em></p>
-              <ul>
-               <p> As the founder of this IT Institute, I take pride in offering free WordPress courses for over three years.<br><br>
-			   Our commitment to empowering students with valuable skills, coupled with a user-friendly platform, reflects our
-			   dedication to fostering knowledge and success in the digital realm
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item anileft">
-              <h4>Senior IT Officer & Data Analist</h4>
-              <h5>2018 - 2023</h5>
-              <p><em>Akij Group, Khulna Regional Office</em></p>
-              <ul <p>Akij Group is one of the largest Bangladeshi industrial conglomerates. The industries under this conglomerate include textiles, tobacco, food and beverage, cement, ceramics, printing and packaging, pharmaceuticals, consumer products etc.</p>
-              </ul>
-            </div><!-- Edn Resume Item -->
-			
-			  <div class="resume-item anileft">
-              <h4>Audit Officer </h4>
-              <h5>2016 - 2018</h5>
-              <p><em>ROSC Project, LGEB, Bangladesh</em></p>
-              <ul <p>The ROSC II project is being implemented by Directorate of Primary Education (DPE) over a six-year period (2013-2018) in about 148 additional upazilas of the country and the upazilas were selected on the basis of poverty, education deprivation and other relevant criteria. ROSC II has been providing second chance primary education to out-of-school children in targeted rural upazilas (sub-districts) of the country through learning centers (LCs) since January 2013.</p>
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Resume Section -->
-
-    <!-- Services Section -->
-    <section id="services" class="services section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Service</h2>
-        <p>A service is the act of providing support or performing tasks for clients or customers. It aims to fulfill needs, solve problems, and deliver value, often in areas like technology, consulting, or customer care.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6 anileft" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <i class="bi bi-activity"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Web Development</h3>
-              </a>
-              <p>Web development involves building, designing, and maintaining websites. It includes front-end (design/UI) and back-end (server/database) work. Developers use programming languages and frameworks to create functional, secure, and user-friendly websites.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 anitop" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-broadcast"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>WordPress</h3>
-              </a>
-              <p>WordPress is a popular, open-source content management system (CMS) used to create websites and blogs. It offers a user-friendly interface, themes, and plugins, making it highly customizable for various web projects.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 aniright" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-easel"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Theme Customization</h3>
-              </a>
-              <p>Theme customization allows users to modify a pre-built website theme to match their branding and functionality needs. It involves editing design elements, layouts, colors, and features using code or theme options.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 anileft" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-bounding-box-circles"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>PSD to WordPress</h3>
-              </a>
-              <p>PSD to WordPress is the process of converting a Photoshop design (PSD) into a fully functional WordPress theme. It involves coding the design into responsive, customizable web pages using HTML, CSS, and PHP.</p>
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 anitop" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-calendar4-week"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Woo-Commerce</h3>
-              </a>
-              <p>WooCommerce is a popular, customizable WordPress plugin for building eCommerce websites. It enables users to create online stores, manage products, payments, and shipping, offering extensive flexibility and scalability for businesses.</p>
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 aniright" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-chat-square-text"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Server Management</h3>
-              </a>
-              <p>Server management involves maintaining and optimizing servers to ensure reliable performance, security, and uptime. This includes tasks like software updates, monitoring, backups, and troubleshooting to ensure smooth operations for websites or applications.</p>
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Services Section -->
-
-    <!-- Stats Section -->
-    <section id="stats" class="stats section accent-background">
-
-      <img src="images/stats-bg.jpg" alt="" data-aos="fade-in">
-
-      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="0" class="purecounter">232</span>
-              <p>Clients</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="0" class="purecounter">521</span>
-              <p>Projects</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="0" class="purecounter">1453</span>
-              <p>Hours Of Support</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="0" class="purecounter">32</span>
-              <p>Awards</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Stats Section -->
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>A portfolio showcases an individual's or company’s work, skills, and accomplishments. It often includes projects, case studies, and testimonials, providing a visual and detailed representation of expertise to attract potential clients or employers.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-	          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100 ">
-	            <li data-filter="*" class="filter-active">All</li>
-	            <li data-filter=".filter-app">Construction</li>
-	            <li data-filter=".filter-product">Hotel</li>
-	            <li data-filter=".filter-branding">Minimalist design</li>
-	            <li data-filter=".filter-books">Jewellery</li>
-	          </ul><!-- End Portfolio Filters -->
-	
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="images/Portpic/construction.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Construction.png 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="mages/Portpic/construction.png" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="images/Portpic/hotel.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Hotel 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="images/Portpic/hotel.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="images/Portpic/Minimalis.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Minimalis 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="images/Portpic/Minimalis.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <img src="images/Portpic/Jewellery.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Jewellery 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="images/Portpic/Jewellery.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="images/Portpic/construction-2.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="images/Portpic/construction-2.png" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="images/Portpic/hotel-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Hotel 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="images/Portpic/hotel-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="images/Portpic/Minimalis-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Minimalis 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="images/Portpic/Minimalis-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <img src="images/Portpic/Jewellery-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Jewellery 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="images/Portpic/Jewellery-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="images/app-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/app-3.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="images/product-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/product-3.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="images/branding-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/branding-3.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <img src="images/books-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Books 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/books-3.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Portfolio Section -->
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing section" style="display:none;">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Pricing</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 gx-lg-5">
-
-          <div class="col-lg-6">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>Portrait Photography</h3>
-              <h4>$160.00</h4>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-6">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>Fashion Photography</h3>
-              <h4>$300.00</h4>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-6">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>Sports Photography</h3>
-              <h4>$200.00</h4>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-6">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>Still Life Photography</h3>
-              <h4>$120.00</h4>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-6">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>Wedding Photography</h3>
-              <h4>$500.00</h4>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-6">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>Photojournalism</h3>
-              <h4>$200.00</h4>
-            </div>
-          </div><!-- End Pricing Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Pricing Section -->
-
-    <!-- Faq Section -->
-    <section id="faq" class="faq section">
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="content px-xl-5">
-              <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
-              <p>
-                Answer: A web developer creates, maintains, and optimizes websites, ensuring they are functional, visually appealing, and responsive across devices. They work on either the front-end (design/UI) or back-end (server/database), or both (full-stack), using programming languages and technologies to deliver fast, secure, and user-friendly websites.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="faq-container">
-              <div class="faq-item faq-active">
-                <h3><span class="num">1.</span> <span> What does a web developer do?</span></h3>
-                <div class="faq-content">
-                  <p>Answer: A web developer builds and maintains websites. They work on the technical aspects, such as site functionality, speed, and design, ensuring the site is user-friendly and performs well on different devices.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3><span class="num">2.</span> <span>What are the differences between front-end, back-end, and full-stack development?</span></h3>
-                <div class="faq-content">
-                  <p>Answer: <br>i.&nbsp;&nbsp;&nbsp; <strong>Front-end:-</strong> Works on the user-facing part (HTML, CSS, JavaScript).<br>
-						ii. &nbsp;&nbsp;<strong>Back-end:-</strong> Focuses on server-side logic (databases, servers, APIs).<br>
-						iii. &nbsp;<strong>Full-stack:-</strong> Covers both front-end and back-end development.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3><span class="num">3.</span> <span>What is responsive web design?</span></h3>
-                <div class="faq-content">
-                  <p>Answer: Responsive design ensures that websites adapt to different screen sizes and devices, offering an optimal user experience across desktops, tablets, and smartphones.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3><span class="num">4.</span> <span>How can I make my website load faster?</span></h3>
-                <div class="faq-content">
-                  <p>Answer: You can improve loading speed by optimizing images, minifying CSS/JavaScript, using a Content Delivery Network (CDN), and enabling browser caching.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3><span class="num">5.</span> <span>What is your process for starting a new project?</span></h3>
-                <div class="faq-content">
-                  <p> Answer: The process generally involves:<br><br>
-
-						i.&nbsp;&nbsp;&nbsp; Understanding client requirements.<br>
-						ii.&nbsp;&nbsp; Planning and wireframing.<br>
-						iii.&nbsp; Designing, developing, and testing.<br>
-						iv.&nbsp; Launching and ongoing maintenance.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /Faq Section -->
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section accent-background">
-
-      <img src="images/testimonials-bg.jpg" class="testimonials-bg" alt="">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script data-cfasync="false" src="js/email-decode.min.js"></script><script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="images/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>"I couldn’t be happier! The attention to detail and customer support made the whole experience fantastic. I’ll definitely be coming back for more!"</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="images/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>"Absolutely thrilled with the service! The team was professional, responsive, and exceeded all my expectations. Highly recommend to anyone looking for quality and care!".</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="images/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>"What a wonderful experience! Every step was smooth, and the end result was beyond what I imagined. Thank you for your outstanding service!"</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="images/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>"Amazing service! They listened to my needs and delivered perfectly. I’m so grateful and will be spreading the word!"</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="images/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>"Simply outstanding! The team was friendly, knowledgeable, and made the process enjoyable. I’m so pleased with the results!"</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-
-    </section><!-- /Testimonials Section -->
-
-	
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Write to us for the information you need</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="info-wrap" data-aos="fade-up" data-aos-delay="200">
-          <div class="row gy-5">
-
-            <div class="col-lg-4">
-              <div class="info-item d-flex align-items-center">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Address</h3>
-                  <p>29 no sahinur jame mosjid road, goborchaka, shonadanga, khulna-9100</p>
-                </div>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="col-lg-4">
-              <div class="info-item d-flex align-items-center">
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Call Us</h3>
-                  <p>+880 1676-636300</p>
-                </div>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="col-lg-4">
-              <div class="info-item d-flex align-items-center">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email Us</h3>
-                  <p>aminurislam.dev@gmail.com</p>
-                </div>
-              </div>
-            </div><!-- End Info Item -->
-
-          </div>
-        </div>
-
-        <form id="contactForm"  class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+      </section>
+      <!-- /Hero Section -->
+      <!-- About Section -->
+      <section id="about" class="about section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
           <div class="row gy-4">
-
             <div class="col-md-6">
-              <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required="">
+              <div class="row justify-content-between gy-4">
+                <div class="col-lg-5">
+                  <img src="images/Aminur.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-7 about-info">
+                  <p>
+                    <strong>Name: </strong>
+                    <span>Md. Aminur Islam Khan</span>
+                  </p>
+                  <p>
+                    <strong>Profile: </strong>
+                    <span>Front-End Developer</span>
+                  </p>
+                  <p>
+                    <strong>Email: </strong>
+                    <span>aminurislam.dev@gmail.com</span>
+                  </p>
+                  <p>
+                    <strong>Phone: </strong>
+                    <span>+880 1676-636300</span>
+                  </p>
+                </div>
+              </div>
+              <div class="skills-content skills-animation anileft">
+                <h5>Skills</h5>
+                <div class="progress">
+                  <span class="skill">
+                    <span>HTML</span>
+                    <i class="val">100%</i>
+                  </span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <!-- End Skills Item -->
+                <div class="progress">
+                  <span class="skill">
+                    <span>CSS</span>
+                    <i class="val">90%</i>
+                  </span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <!-- End Skills Item -->
+                <div class="progress">
+                  <span class="skill">
+                    <span>JavaScript</span>
+                    <i class="val">75%</i>
+                  </span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <!-- End Skills Item -->
+                <div class="progress">
+                  <span class="skill">
+                    <span>Photoshop</span>
+                    <i class="val">55%</i>
+                  </span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <!-- End Skills Item -->
+              </div>
             </div>
-
-            <div class="col-md-6 ">
-              <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required="">
+            <div class="col-md-6 aniright">
+              <div class="about-me ">
+                <h4>About me</h4>
+                <p> I’m Aminur Islam, a front-end and back-end developer with a passion for creating seamless digital experiences. I specialize in responsive design using HTML, CSS, and JavaScript, while ensuring efficient server-side functionality with PHP, and MySQL. <br>
+                  <br> With a full-stack approach, I transform ideas into visually engaging, high-performing websites. I prioritize user experience and technical precision, delivering solutions that are both functional and scalable. <br>
+                  <br> Collaboration is central to my process. I work closely with clients and teams to align technical development with project goals, ensuring each product meets both business and user needs effectively.
+                </p>
+              </div>
             </div>
-
-            <div class="col-md-12">
-              <input type="text" class="form-control" id="subject"  name="subject" placeholder="Subject" required="">
-            </div>
-
-            <div class="col-md-12">
-              <textarea class="form-control"  id="message" name="message" rows="6" placeholder="Message" required=""></textarea>
-            </div>
-
-            <div class="col-md-12 text-center">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-
-              <button type="submit">Send Message</button>
-            </div>
-
           </div>
-        </form><!-- End Contact Form -->
-	<script>
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            const scriptURL = "https://script.google.com/macros/s/AKfycbwPZtrt_fwPQAzGNFQytzD1PmctKVUuwrIYqVMfMemyIXPBkyxtHc1Zpw_I6NLuE3cNNQ/exec"; // Replace with your Google Apps Script Web App URL
-            const formData = {
+        </div>
+      </section>
+      <!-- /About Section -->
+      <!-- Resume Section -->
+      <section id="resume" class="resume section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Resume</h2>
+          <p>A resume is a document highlighting a person's skills, experience, and qualifications, used to apply for jobs or opportunities.</p>
+        </div>
+        <!-- End Section Title -->
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="resume-title">Sumary</h3>
+              <div class="resume-item pb-0 aniright">
+                <h4>Md Aminur Islam Khan</h4>
+                <p>
+                  <em>I am a dedicated web designer and developer with a strong focus on creating user-friendly and visually appealing websites. Proficient in HTML, CSS, and JavaScript, I enjoy transforming concepts into functional designs. My goal is to deliver seamless digital experiences that meet client needs while enhancing user engagement and satisfaction.</em>
+                </p>
+                <ul>
+                  <li>29 no sahinur jame mosjid road, goborchaka, shonadanga, khulna-9100</li>
+                  <li>+880 1676-636300</li>
+                  <li>aminurislam.dev@gmail.com</li>
+                </ul>
+              </div>
+              <!-- Edn Resume Item -->
+              <h3 class="resume-title">Education</h3>
+              <div class="resume-item aniright">
+                <h4>Master of Finance & Banking</h4>
+                <h5>2009-2010</h5>
+                <p>
+                  <em>Tejgaon College, Dhaka</em>
+                </p>
+                <p>Finance and banking involve managing money, investments, and financial institutions. Master's programs provide advanced knowledge and skills for careers in financial analysis, investment management, and banking operations.</p>
+              </div>
+              <!-- Edn Resume Item -->
+              <div class="resume-item aniright">
+                <h4>Bachelor of Finance & Banking</h4>
+                <h5>2005 - 2009</h5>
+                <p>
+                  <em>Azam Khan Government Commerce College</em>
+                </p>
+                <p>Finance and Banking Honors programs offer in-depth knowledge of financial markets, investment strategies, and banking operations, preparing students for advanced careers in finance and economic analysis.</p>
+              </div>
+              <!-- Edn Resume Item -->
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+              <h3 class="resume-title">Professional Experience</h3>
+              <div class="resume-item anileft">
+                <h4>Senior Web Designer & Developer </h4>
+                <h5>2023 - Present</h5>
+                <p>
+                  <em>Freedom IT Institution </em>
+                </p>
+                <ul>
+                  <p> As the founder of this IT Institute, I take pride in offering free WordPress courses for over three years. <br>
+                    <br> Our commitment to empowering students with valuable skills, coupled with a user-friendly platform, reflects our dedication to fostering knowledge and success in the digital realm
+                </ul>
+              </div>
+              <!-- Edn Resume Item -->
+              <div class="resume-item anileft">
+                <h4>Senior IT Officer & Data Analist</h4>
+                <h5>2018 - 2023</h5>
+                <p>
+                  <em>Akij Group, Khulna Regional Office</em>
+                </p>
+                <ul <p>Akij Group is one of the largest Bangladeshi industrial conglomerates. The industries under this conglomerate include textiles, tobacco, food and beverage, cement, ceramics, printing and packaging, pharmaceuticals, consumer products etc.</p>
+                </ul>
+              </div>
+              <!-- Edn Resume Item -->
+              <div class="resume-item anileft">
+                <h4>Audit Officer </h4>
+                <h5>2016 - 2018</h5>
+                <p>
+                  <em>ROSC Project, LGEB, Bangladesh</em>
+                </p>
+                <ul <p>The ROSC II project is being implemented by Directorate of Primary Education (DPE) over a six-year period (2013-2018) in about 148 additional upazilas of the country and the upazilas were selected on the basis of poverty, education deprivation and other relevant criteria. ROSC II has been providing second chance primary education to out-of-school children in targeted rural upazilas (sub-districts) of the country through learning centers (LCs) since January 2013.</p>
+                </ul>
+              </div>
+              <!-- Edn Resume Item -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Resume Section -->
+      <!-- Services Section -->
+      <section id="services" class="services section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Service</h2>
+          <p>A service is the act of providing support or performing tasks for clients or customers. It aims to fulfill needs, solve problems, and deliver value, often in areas like technology, consulting, or customer care.</p>
+        </div>
+        <!-- End Section Title -->
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-4 col-md-6 anileft" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-item  position-relative">
+                <div class="icon">
+                  <i class="bi bi-activity"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>Web Development</h3>
+                </a>
+                <p>Web development involves building, designing, and maintaining websites. It includes front-end (design/UI) and back-end (server/database) work. Developers use programming languages and frameworks to create functional, secure, and user-friendly websites.</p>
+              </div>
+            </div>
+            <!-- End Service Item -->
+            <div class="col-lg-4 col-md-6 anitop" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="bi bi-broadcast"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>WordPress</h3>
+                </a>
+                <p>WordPress is a popular, open-source content management system (CMS) used to create websites and blogs. It offers a user-friendly interface, themes, and plugins, making it highly customizable for various web projects.</p>
+              </div>
+            </div>
+            <!-- End Service Item -->
+            <div class="col-lg-4 col-md-6 aniright" data-aos="fade-up" data-aos-delay="300">
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="bi bi-easel"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>Theme Customization</h3>
+                </a>
+                <p>Theme customization allows users to modify a pre-built website theme to match their branding and functionality needs. It involves editing design elements, layouts, colors, and features using code or theme options.</p>
+              </div>
+            </div>
+            <!-- End Service Item -->
+            <div class="col-lg-4 col-md-6 anileft" data-aos="fade-up" data-aos-delay="400">
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="bi bi-bounding-box-circles"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>PSD to WordPress</h3>
+                </a>
+                <p>PSD to WordPress is the process of converting a Photoshop design (PSD) into a fully functional WordPress theme. It involves coding the design into responsive, customizable web pages using HTML, CSS, and PHP.</p>
+                <a href="#" class="stretched-link"></a>
+              </div>
+            </div>
+            <!-- End Service Item -->
+            <div class="col-lg-4 col-md-6 anitop" data-aos="fade-up" data-aos-delay="500">
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="bi bi-calendar4-week"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>Woo-Commerce</h3>
+                </a>
+                <p>WooCommerce is a popular, customizable WordPress plugin for building eCommerce websites. It enables users to create online stores, manage products, payments, and shipping, offering extensive flexibility and scalability for businesses.</p>
+                <a href="#" class="stretched-link"></a>
+              </div>
+            </div>
+            <!-- End Service Item -->
+            <div class="col-lg-4 col-md-6 aniright" data-aos="fade-up" data-aos-delay="600">
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="bi bi-chat-square-text"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>Server Management</h3>
+                </a>
+                <p>Server management involves maintaining and optimizing servers to ensure reliable performance, security, and uptime. This includes tasks like software updates, monitoring, backups, and troubleshooting to ensure smooth operations for websites or applications.</p>
+                <a href="#" class="stretched-link"></a>
+              </div>
+            </div>
+            <!-- End Service Item -->
+          </div>
+        </div>
+      </section>
+      <!-- /Services Section -->
+      <!-- Stats Section -->
+      <section id="stats" class="stats section accent-background">
+        <img src="images/stats-bg.jpg" alt="" data-aos="fade-in">
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="0" class="purecounter">232</span>
+                <p>Clients</p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="0" class="purecounter">521</span>
+                <p>Projects</p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="0" class="purecounter">1453</span>
+                <p>Hours Of Support</p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="0" class="purecounter">32</span>
+                <p>Awards</p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+          </div>
+        </div>
+      </section>
+      <!-- /Stats Section -->
+      <!-- Portfolio Section -->
+      <section id="portfolio" class="portfolio section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Portfolio</h2>
+          <p>A portfolio showcases an individual's or company’s work, skills, and accomplishments. It often includes projects, case studies, and testimonials, providing a visual and detailed representation of expertise to attract potential clients or employers.</p>
+        </div>
+        <!-- End Section Title -->
+        <div class="container">
+          <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+            <ul id="productList" class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+              <button id="prevBtn" onclick="prevPage()">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+              </button>
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">Construction</li>
+              <li data-filter=".filter-product">Hotel</li>
+              <li data-filter=".filter-branding">Minimalist design</li>
+              <li data-filter=".filter-books">Jewellery</li>
+              <li data-filter="*" class="filter-active">06</li>
+              <li data-filter=".filter-app">07</li>
+              <li data-filter=".filter-product">08</li>
+              <li data-filter=".filter-branding">09 design</li>
+              <li data-filter=".filter-books">10 Jewellery</li>
+              <li data-filter="*" class="filter-active">11 All</li>
+              <li data-filter=".filter-app">12 Construction</li>
+              <li data-filter=".filter-product">13 Hotel</li>
+              <li data-filter=".filter-branding">14 Minimalist design</li>
+              <li data-filter=".filter-books">15 Jewellery</li>
+              <button id="nextBtn" onclick="nextPage()">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+              </button>
+            </ul>
+            <!-- End Portfolio Filters -->
+            <script>
+              const itemsPerPage = 5;
+              let currentPage = 1;
+              // Function to render products based on current page
+              function renderProducts() {
+                const start = (currentPage - 1) * itemsPerPage;
+                const end = start + itemsPerPage;
+                // Hide all products initially
+                const allProducts = document.querySelectorAll('#productList li');
+                allProducts.forEach((product) => {
+                  product.style.display = 'none'; // Hide all items
+                });
+                // Show only the products for the current page
+                for (let i = start; i < end; i++) {
+                  if (allProducts[i]) {
+                    allProducts[i].style.display = 'block';
+                  }
+                }
+                // Disable/Enable buttons based on currentPage
+                document.getElementById('prevBtn').disabled = currentPage === 1;
+                document.getElementById('nextBtn').disabled = currentPage * itemsPerPage >= allProducts.length;
+              }
+              // Next button click event
+              function nextPage() {
+                if (currentPage * itemsPerPage < document.querySelectorAll('#productList li').length) {
+                  currentPage++;
+                  renderProducts();
+                }
+              }
+              // Previous button click event
+              function prevPage() {
+                if (currentPage > 1) {
+                  currentPage--;
+                  renderProducts();
+                }
+              }
+              // Initial render
+              renderProducts();
+            </script>
+            <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                <img src="images/Portpic/construction.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Construction.png 1</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="mages/Portpic/construction.png" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                    <i class="bi bi-zoom-in"></i>
+                  </a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link">
+                    <i class="bi bi-link-45deg"></i>
+                  </a>
+                </div>
+              </div>
+              <!-- End Portfolio Item -->
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                <img src="images/Portpic/hotel.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Hotel 1</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="images/Portpic/hotel.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                    <i class="bi bi-zoom-in"></i>
+                  </a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link">
+                    <i class="bi bi-link-45deg"></i>
+                  </a>
+                </div>
+              </div>
+              <!-- End Portfolio Item -->
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                <img src="images/Portpic/Minimalis.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Minimalis 1</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="images/Portpic/Minimalis.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                    <i class="bi bi-zoom-in"></i>
+                  </a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link">
+                    <i class="bi bi-link-45deg"></i>
+                  </a>
+                </div>
+              </div>
+              <!-- End Portfolio Item -->
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+                <img src="images/Portpic/Jewellery.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Jewellery 1</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="images/Portpic/Jewellery.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link">
+                    <i class="bi bi-zoom-in"></i>
+                  </a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link">
+                    <i class="bi bi-link-45deg"></i>
+                  </a>
+                </div>
+              </div>
+              <!-- End Portfolio Item -->
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                <img src="images/Portpic/construction-2.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>App 2</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="images/Portpic/construction-2.png" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                    <i class="bi bi-zoom-in"></i>
+                  </a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link">
+                    <i class="bi bi-link-45deg"></i>
+                  </a>
+                </div>
+              </div>
+              <!-- End Portfolio Item -->
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                <img src="images/Portpic/hotel-2.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Hotel 2</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="images/Portpic/hotel-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                    <i class="bi bi-zoom-in"></i>
+                  </a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link">
+                    <i class="bi bi-link-45deg"></i>
+                  </a>
+                </div>
+              </div>
+              <!-- End Portfolio Item -->
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                <img src="images/Portpic/Minimalis-2.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Minimalis 2</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="images/Portpic/Minimalis-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                    <i class="bi bi-zoom-in"></i>
+                  </a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link">
+                    <i class="bi bi-link-45deg"></i>
+                  </a>
+                </div>
+              </div>
+              <!-- End Portfolio Item -->
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+                <img src="images/Portpic/Jewellery-2.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Jewellery 2</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="images/Portpic/Jewellery-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link">
+                    <i class="bi bi-zoom-in"></i>
+                  </a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link">
+                    <i class="bi bi-link-45deg"></i>
+                  </a>
+                </div>
+              </div>
+              <!-- End Portfolio Item -->
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                <img src="images/app-3.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>App 3</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/app-3.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                    <i class="bi bi-zoom-in"></i>
+                  </a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link">
+                    <i class="bi bi-link-45deg"></i>
+                  </a>
+                </div>
+              </div>
+              <!-- End Portfolio Item -->
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                <img src="images/product-3.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Product 3</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/product-3.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                    <i class="bi bi-zoom-in"></i>
+                  </a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link">
+                    <i class="bi bi-link-45deg"></i>
+                  </a>
+                </div>
+              </div>
+              <!-- End Portfolio Item -->
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                <img src="images/branding-3.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Branding 3</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/branding-3.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                    <i class="bi bi-zoom-in"></i>
+                  </a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link">
+                    <i class="bi bi-link-45deg"></i>
+                  </a>
+                </div>
+              </div>
+              <!-- End Portfolio Item -->
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+                <img src="images/books-3.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Books 3</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/books-3.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link">
+                    <i class="bi bi-zoom-in"></i>
+                  </a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link">
+                    <i class="bi bi-link-45deg"></i>
+                  </a>
+                </div>
+              </div>
+              <!-- End Portfolio Item -->
+            </div>
+            <!-- End Portfolio Container -->
+          </div>
+        </div>
+      </section>
+      <!-- /Portfolio Section -->
+      <!-- Pricing Section -->
+      <section id="pricing" class="pricing section" style="display:none;">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Pricing</h2>
+          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        </div>
+        <!-- End Section Title -->
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4 gx-lg-5">
+            <div class="col-lg-6">
+              <div class="pricing-item d-flex justify-content-between">
+                <h3>Portrait Photography</h3>
+                <h4>$160.00</h4>
+              </div>
+            </div>
+            <!-- End Pricing Item -->
+            <div class="col-lg-6">
+              <div class="pricing-item d-flex justify-content-between">
+                <h3>Fashion Photography</h3>
+                <h4>$300.00</h4>
+              </div>
+            </div>
+            <!-- End Pricing Item -->
+            <div class="col-lg-6">
+              <div class="pricing-item d-flex justify-content-between">
+                <h3>Sports Photography</h3>
+                <h4>$200.00</h4>
+              </div>
+            </div>
+            <!-- End Pricing Item -->
+            <div class="col-lg-6">
+              <div class="pricing-item d-flex justify-content-between">
+                <h3>Still Life Photography</h3>
+                <h4>$120.00</h4>
+              </div>
+            </div>
+            <!-- End Pricing Item -->
+            <div class="col-lg-6">
+              <div class="pricing-item d-flex justify-content-between">
+                <h3>Wedding Photography</h3>
+                <h4>$500.00</h4>
+              </div>
+            </div>
+            <!-- End Pricing Item -->
+            <div class="col-lg-6">
+              <div class="pricing-item d-flex justify-content-between">
+                <h3>Photojournalism</h3>
+                <h4>$200.00</h4>
+              </div>
+            </div>
+            <!-- End Pricing Item -->
+          </div>
+        </div>
+      </section>
+      <!-- /Pricing Section -->
+      <!-- Faq Section -->
+      <section id="faq" class="faq section">
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="content px-xl-5">
+                <h3>
+                  <span>Frequently Asked </span>
+                  <strong>Questions</strong>
+                </h3>
+                <p> Answer: A web developer creates, maintains, and optimizes websites, ensuring they are functional, visually appealing, and responsive across devices. They work on either the front-end (design/UI) or back-end (server/database), or both (full-stack), using programming languages and technologies to deliver fast, secure, and user-friendly websites. </p>
+              </div>
+            </div>
+            <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+              <div class="faq-container">
+                <div class="faq-item faq-active">
+                  <h3>
+                    <span class="num">1.</span>
+                    <span> What does a web developer do?</span>
+                  </h3>
+                  <div class="faq-content">
+                    <p>Answer: A web developer builds and maintains websites. They work on the technical aspects, such as site functionality, speed, and design, ensuring the site is user-friendly and performs well on different devices.</p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq item-->
+                <div class="faq-item">
+                  <h3>
+                    <span class="num">2.</span>
+                    <span>What are the differences between front-end, back-end, and full-stack development?</span>
+                  </h3>
+                  <div class="faq-content">
+                    <p>Answer: <br>i.&nbsp;&nbsp;&nbsp; <strong>Front-end:-</strong> Works on the user-facing part (HTML, CSS, JavaScript). <br> ii. &nbsp;&nbsp; <strong>Back-end:-</strong> Focuses on server-side logic (databases, servers, APIs). <br> iii. &nbsp; <strong>Full-stack:-</strong> Covers both front-end and back-end development. </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq item-->
+                <div class="faq-item">
+                  <h3>
+                    <span class="num">3.</span>
+                    <span>What is responsive web design?</span>
+                  </h3>
+                  <div class="faq-content">
+                    <p>Answer: Responsive design ensures that websites adapt to different screen sizes and devices, offering an optimal user experience across desktops, tablets, and smartphones.</p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq item-->
+                <div class="faq-item">
+                  <h3>
+                    <span class="num">4.</span>
+                    <span>How can I make my website load faster?</span>
+                  </h3>
+                  <div class="faq-content">
+                    <p>Answer: You can improve loading speed by optimizing images, minifying CSS/JavaScript, using a Content Delivery Network (CDN), and enabling browser caching.</p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq item-->
+                <div class="faq-item">
+                  <h3>
+                    <span class="num">5.</span>
+                    <span>What is your process for starting a new project?</span>
+                  </h3>
+                  <div class="faq-content">
+                    <p> Answer: The process generally involves: <br>
+                      <br> i.&nbsp;&nbsp;&nbsp; Understanding client requirements. <br> ii.&nbsp;&nbsp; Planning and wireframing. <br> iii.&nbsp; Designing, developing, and testing. <br> iv.&nbsp; Launching and ongoing maintenance.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq item-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Faq Section -->
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="testimonials section accent-background">
+        <img src="images/testimonials-bg.jpg" class="testimonials-bg" alt="">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper init-swiper">
+            <script data-cfasync="false" src="js/email-decode.min.js"></script>
+            <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 600,
+                "autoplay": {
+                  "delay": 5000
+                },
+                "slidesPerView": "auto",
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "bullets",
+                  "clickable": true
+                }
+              }
+            </script>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <img src="images/testimonials-1.jpg" class="testimonial-img" alt="">
+                  <h3>Saul Goodman</h3>
+                  <h4>Ceo &amp; Founder</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span>"I couldn’t be happier! The attention to detail and customer support made the whole experience fantastic. I’ll definitely be coming back for more!"</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <img src="images/testimonials-2.jpg" class="testimonial-img" alt="">
+                  <h3>Sara Wilsson</h3>
+                  <h4>Designer</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span>"Absolutely thrilled with the service! The team was professional, responsive, and exceeded all my expectations. Highly recommend to anyone looking for quality and care!".</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <img src="images/testimonials-3.jpg" class="testimonial-img" alt="">
+                  <h3>Jena Karlis</h3>
+                  <h4>Store Owner</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span>"What a wonderful experience! Every step was smooth, and the end result was beyond what I imagined. Thank you for your outstanding service!"</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <img src="images/testimonials-4.jpg" class="testimonial-img" alt="">
+                  <h3>Matt Brandon</h3>
+                  <h4>Freelancer</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span>"Amazing service! They listened to my needs and delivered perfectly. I’m so grateful and will be spreading the word!"</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <img src="images/testimonials-5.jpg" class="testimonial-img" alt="">
+                  <h3>John Larson</h3>
+                  <h4>Entrepreneur</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span>"Simply outstanding! The team was friendly, knowledgeable, and made the process enjoyable. I’m so pleased with the results!"</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+      <!-- /Testimonials Section -->
+      <!-- Contact Section -->
+      <section id="contact" class="contact section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Contact</h2>
+          <p>Write to us for the information you need</p>
+        </div>
+        <!-- End Section Title -->
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="info-wrap" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-5">
+              <div class="col-lg-4">
+                <div class="info-item d-flex align-items-center">
+                  <i class="bi bi-geo-alt flex-shrink-0"></i>
+                  <div>
+                    <h3>Address</h3>
+                    <p>29 no sahinur jame mosjid road, goborchaka, shonadanga, khulna-9100</p>
+                  </div>
+                </div>
+              </div>
+              <!-- End Info Item -->
+              <div class="col-lg-4">
+                <div class="info-item d-flex align-items-center">
+                  <i class="bi bi-telephone flex-shrink-0"></i>
+                  <div>
+                    <h3>Call Us</h3>
+                    <p>+880 1676-636300</p>
+                  </div>
+                </div>
+              </div>
+              <!-- End Info Item -->
+              <div class="col-lg-4">
+                <div class="info-item d-flex align-items-center">
+                  <i class="bi bi-envelope flex-shrink-0"></i>
+                  <div>
+                    <h3>Email Us</h3>
+                    <p>aminurislam.dev@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+              <!-- End Info Item -->
+            </div>
+          </div>
+          <form id="contactForm" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+            <div class="row gy-4">
+              <div class="col-md-6">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required="">
+              </div>
+              <div class="col-md-6 ">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required="">
+              </div>
+              <div class="col-md-12">
+                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required="">
+              </div>
+              <div class="col-md-12">
+                <textarea class="form-control" id="message" name="message" rows="6" placeholder="Message" required=""></textarea>
+              </div>
+              <div class="col-md-12 text-center">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <button type="submit">Send Message</button>
+              </div>
+            </div>
+          </form>
+          <!-- End Contact Form -->
+          <script>
+            document.getElementById("contactForm").addEventListener("submit", function(event) {
+              event.preventDefault();
+              const scriptURL = "https://script.google.com/macros/s/AKfycbwPZtrt_fwPQAzGNFQytzD1PmctKVUuwrIYqVMfMemyIXPBkyxtHc1Zpw_I6NLuE3cNNQ/exec"; // Replace with your Google Apps Script Web App URL
+              const formData = {
                 name: document.getElementById("name").value,
                 email: document.getElementById("email").value,
                 subject: document.getElementById("subject").value,
                 message: document.getElementById("message").value
-            };
-
-            fetch(scriptURL, {
+              };
+              fetch(scriptURL, {
                 method: 'POST',
                 body: JSON.stringify(formData),
                 headers: {
-                    'Content-Type': 'application/json'
+                  'Content-Type': 'application/json'
                 }
-            })
-            .then(response => response.json())
-            .then(data => {
+              }).then(response => response.json()).then(data => {
                 document.getElementById("feedback").textContent = "Thank you! Your message has been recorded.";
                 document.getElementById("contactForm").reset();
-            })
-            .catch(error => {
+              }).catch(error => {
                 document.getElementById("feedback").textContent = "Failed to send message. Please try again later.";
                 console.error("Error!", error);
+              });
             });
-        });
-
-
-	</script>
+          </script>
+        </div>
+      </section>
+      <!-- /Contact Section -->
+    </main>
+    <footer id="footer" class="footer accent-background">
+      <div class="container">
+        <div class="copyright text-center ">
+          <p>© <span>Copyright</span>
+            <strong class="px-1 sitename">Aminur</strong>
+            <span>All Rights Reserved</span>
+          </p>
+        </div>
+        <div class="social-links d-flex justify-content-center">
+          <a href="">
+            <i class="bi bi-twitter-x"></i>
+          </a>
+          <a href="">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="">
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </div>
       </div>
-
-    </section><!-- /Contact Section -->
-
-  </main>
-
-  <footer id="footer" class="footer accent-background">
-
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Aminur</strong> <span>All Rights Reserved</span></p>
-      </div>
-      <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
-      </div>
-    </div>
-
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <script>
-    document.getElementById('toggle-menu').addEventListener('click', function() {
+    </footer>
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+    <script>
+      document.getElementById('toggle-menu').addEventListener('click', function() {
         const mynavmenu = document.getElementById('mynavmenu');
         mynavmenu.classList.toggle('open');
-	
-    });
-	
-	        window.addEventListener('scroll', function() {
-            const boxes = document.querySelectorAll('.anileft,.aniright, .anitop');
-            
-            const triggerBottom = window.innerHeight / 5 * 4;
-
-            boxes.forEach(div => {
-                const boxTop = div.getBoundingClientRect().top;
-
-                if(boxTop < triggerBottom) {
-                    div.classList.add('visible');
-					div.classList.add('visible2');
-                } else {
-                    div.classList.remove('visible');
-					div.classList.remove('visible2');
-                }
-            });
+      });
+      window.addEventListener('scroll', function() {
+        const boxes = document.querySelectorAll('.anileft,.aniright, .anitop');
+        const triggerBottom = window.innerHeight / 5 * 4;
+        boxes.forEach(div => {
+          const boxTop = div.getBoundingClientRect().top;
+          if (boxTop < triggerBottom) {
+            div.classList.add('visible');
+            div.classList.add('visible2');
+          } else {
+            div.classList.remove('visible');
+            div.classList.remove('visible2');
+          }
         });
-
-	  
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-</script>
-
-  <!-- Vendor JS Files -->
-  <script data-cfasync="false" src="js/email-decode.min.js"></script><script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/validate.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/typed.umd.js"></script>
-  <script src="js/noframework.waypoints.js"></script>
-  <script src="js/purecounter_vanilla.js"></script>
-  <script src="js/glightbox.min.js"></script>
-  <script src="js/imagesloaded.pkgd.min.js"></script>
-  <script src="js/isotope.pkgd.min.js"></script>
-  <script src="js/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="js/main.js"></script>
-
-<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" data-cf-beacon="{" rayid":"8d61381e69930b3e","servertiming":{"name":{"cfextpri":true,"cfl4":true,"cfspeedbrain":true,"cfcachestatus":true}},"version":"2024.10.1","token":"68c5ca450bae485a842ff76066d69420"}"="" crossorigin="anonymous"></script>
-
-
-</body></html>
+      });
+    </script>
+    <!-- Vendor JS Files -->
+    <script data-cfasync="false" src="js/email-decode.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/validate.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/typed.umd.js"></script>
+    <script src="js/noframework.waypoints.js"></script>
+    <script src="js/purecounter_vanilla.js"></script>
+    <script src="js/glightbox.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <!-- Main JS File -->
+    <script src="js/main.js"></script>
+    <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" data-cf-beacon="{" rayid":"8d61381e69930b3e","servertiming":{"name":{"cfextpri":true,"cfl4":true,"cfspeedbrain":true,"cfcachestatus":true}},"version":"2024.10.1","token":"68c5ca450bae485a842ff76066d69420"}"="" crossorigin="anonymous"></script>
+  </body>
+</html>
